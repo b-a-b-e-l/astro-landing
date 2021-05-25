@@ -106,7 +106,7 @@ input {
   text-align: inherit;
   font-family: inherit;
   width: 100%;
-  border: 0.75px solid #8b83ce;
+  border: none;
   border-radius: 3px;
   background-color: #d1c8ff;
 }
