@@ -16,10 +16,11 @@ h1 {
   font-size: 2.25rem;
   font-weight: 300;
   margin: 0;
+  text-shadow: 0px 0px 10px #fff;
 }
 
 h1 + p {
-  color: #ebe8ff;
+  color: #fff;
   font-weight: 700;
   font-size: 1.3125rem;
   text-transform: uppercase;
@@ -51,7 +52,9 @@ h2 + p {
   background-color: #fff;
   text-transform: uppercase;
   order: -1;
-  padding: 3px;
+  padding: 9px 4px 3px;
+  margin: 0;
+  letter-spacing: 1px;
 }
 
 .fine-print {
@@ -68,6 +71,7 @@ span {
 .intro {
   background-color: #d1c8ff;
   background-image: url(../images/backcosmic.jpg);
+  background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
   padding: 0 0.5em 2em;
@@ -108,8 +112,29 @@ input {
 }
 
 input:active,
-input:focus {
+input:focus,
+input:hover {
   background-color: #f4d2f7;
+}
+
+button {
+  display: inline-block;
+  padding: 0.66em 2em;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 1px;
+  background: linear-gradient(133deg, #5248a5, #8b83ce);
+  color: #fcdefc;
+  transition: 300ms;
+}
+
+button:hover {
+  background: linear-gradient(33deg, #8b83ce, #f4d2f7);
+  color: #404040;
 }
 
 /* Media Query */

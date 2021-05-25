@@ -16,7 +16,7 @@
       <p class="top-text">Cosmic Energy</p>
     </div>
 
-    <div class="main-content">
+    <div class="main-content" id="Main-Content">
       <h2>Decode your birth chart</h2>
       <p>Learn more about yourself</p>
       <p>
@@ -25,18 +25,46 @@
         empowerment tools and techniques based on your birth chart. Let the
         stars guide you!
       </p>
-      <form>
+      <form id="Data-Collector">
         <label for="name">Name:</label>
-        <input type="text" id="name" placeholder="Enter your name" />
+        <input name="firstName" type="text" id="name" placeholder="Enter your name" />
       </br>
         <label for="date">Date and time of birth:</label>
-        <input type="datetime-local" id="date" />
+        <input name="dateTime" type="datetime-local" id="date" />
         </br>
         <label for="location">Location</label>
-        <input type="text" id="location" placeholder="City, Country" />
+        <input name="location" type="text" id="location" placeholder="City, Country" />
         <button type="submit">Send!</button>
       </form>
       <p class="fine-print">Your information stays private with us.</p>
     </div>
+    <script>
+let dataCollectorForm = document.getElementById("Data-Collector")
+dataCollectorForm.addEventListener("submit", event => {
+  event.preventDefault()
+  
+  let ourFormData = new FormData(event.target)
+  let userFirstName = ourFormData.get("firstName")
+  let userBirthTime = ourFormData.get("dateTime")
+  let userLocation = ourFormData.get("location")
+
+  let updatedMainContent = `
+  <h2>Thank you, ${userFirstName}</h2>
+      <p>${userBirthTime}, ${userLocation}</p>
+      <p>
+      <span>
+        This is our Cosmic Energy tip, just for you:
+        </span>
+      </p>
+            <p>Initiate something. Have an idea that’s been brewing? This is a supported time to take action. You don’t have to know how it’s all going to work out—just take that first step.
+      </p>
+      <p class="fine-print"> You are the author of your story. You are also the main character. Bring that energy through this transformative season.</p>
+      `
+      let ourMainContent = document.getElementById("Main-Content")
+      ourMainContent.innerHTML = updatedMainContent
+
+})
+
+    </script>
   </body>
 </html>
